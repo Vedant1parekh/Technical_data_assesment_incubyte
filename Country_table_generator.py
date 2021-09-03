@@ -62,12 +62,13 @@ with open("patients.txt","r") as f:
         if(each_data[1][1]=='H' or each_data[1][1]=='T'):
             continue
         each_data[1][11]=datetime.strptime(each_data[1][11], '%m%d%Y').strftime('%Y-%m-%d')
-        b=check_country_table(each_data[1][9].lower())
-        if not b:
+        if (each_data[1][9]=="IND"):
+         b=check_country_table(each_data[1][9].lower())
+         if not b:
             create_country_table(each_data[1][9].lower())
-        entry=check_data(each_data[1][3],each_data[1][9].lower())
-        if not entry:
-            add_data(each_data,each_data[1][9].lower())
+         entry=check_data(each_data[1][3],each_data[1][9].lower())
+         if not entry:
+             add_data(each_data,each_data[1][9].lower())
 mydb.commit() 
 mydb.close()
 
