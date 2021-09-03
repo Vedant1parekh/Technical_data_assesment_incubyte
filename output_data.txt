@@ -1,6 +1,2 @@
-|Cust_ID|Customer_Name|Open_date|Consult_Dt|Vacc_type|Dr_Consulted|State|Country|PostCode|DOB|Active_customer
-0|12345|Matt|2010-10-12|2012-10-13|MVD|Paul|BOS|NYC|0|1987-06-03|A
-1|123457|Alex|2010-10-12|2012-10-13|MVD|Paul|SA|USA|0|1987-06-03|A
-2|123458|John|2010-10-12|2012-10-13|MVD|Paul|TN|IND|0|1987-06-03|A
-3|123459|Mathew|2010-10-12|2012-10-13|MVD|Paul|WAS|PHIL|0|1987-06-03|A
-4|1256|Jacob|2010-10-12|2012-10-13|MVD|Paul|VIC|AU|0|1987-06-03|A
+|Cust_ID|Customer_Name|Open_date|Consult_Dt|Vacc_type|Dr_Consulted|State|DOB|Active_customer
+0|123458|John|2010-10-12|2012-10-13|MVD|Paul|TN|1987-06-03|A

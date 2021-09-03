@@ -25,7 +25,7 @@ This repository conatins implementation of Incubyte Technical assesment for data
         <li> Trasform date into specific format</li>
         <li> For int data type convert null to 0 value</li></ol>
         <li>The data will be in panda-dataframe and inserted into database</li>
-        <li> The data of each country is retrieved in pandas dataframe and generated pipe seperated data in <b>output_data.txt</b> file.</li>
+        <li> The data of INDIA  is retrieved in pandas dataframe and generated pipe seperated data in <b>output_data.txt</b> file.</li>
   </ul>
 
        

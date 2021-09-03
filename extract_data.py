@@ -4,8 +4,8 @@ mydatabase=connector.connect(host="localhost", username="root",password="Vedant@
 
 cursor=mydatabase.cursor()
 
-#Extarct data from patient table and create pipe seperated file
-df=pd.read_sql("select * from patients",con=mydatabase)
+#Extarct data from india table and create pipe seperated file
+df=pd.read_sql("select * from ind",con=mydatabase)
 df.to_csv("output_data.txt",sep="|")
 mydatabase.commit()
 

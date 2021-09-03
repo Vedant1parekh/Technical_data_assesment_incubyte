@@ -33,7 +33,6 @@ def create_country_table(name):
     `Vacc_type` char(5) NOT NULL,
     `Dr_Consulted` char(255) DEFAULT NULL,
     `State` char(5) DEFAULT NULL,
-    `PostCode` varchar(5) default NULL,
     `DOB` date DEFAULT NULL,
     `Active_customer` char(1) NOT NULL,
     PRIMARY KEY (`Cust_ID`)
@@ -50,7 +49,7 @@ def check_data(id,entry):
 
 #crete new data
 def add_data(data,name):
-    sql="INSERT INTO " + (name) + "(Cust_id,Customer_Name,Open_date,Consult_Dt,Vacc_type,Dr_Consulted,State,PostCode,DOB,Active_customer)values('" + data[1][3] + "','" + data[1][2] + "','" + data[1][4] + "','" + data[1][5] + "','"+ data[1][6] + "','" + data[1][7] + "','" + data[1][8] + "','" + data[1][10] + "','" + data[1][11] + "','" + data[1][12] + "')"
+    sql="INSERT INTO " + (name) + "(Cust_id,Customer_Name,Open_date,Consult_Dt,Vacc_type,Dr_Consulted,State,DOB,Active_customer)values('" + data[1][3] + "','" + data[1][2] + "','" + data[1][4] + "','" + data[1][5] + "','"+ data[1][6] + "','" + data[1][7] + "','" + data[1][8] + "','" + data[1][11] + "','" + data[1][12] + "')"
     cursor.execute(sql)
     
     
@@ -63,12 +62,12 @@ with open("patients.txt","r") as f:
             continue
         each_data[1][11]=datetime.strptime(each_data[1][11], '%m%d%Y').strftime('%Y-%m-%d')
         if (each_data[1][9]=="IND"):
-         b=check_country_table(each_data[1][9].lower())
-         if not b:
-            create_country_table(each_data[1][9].lower())
-         entry=check_data(each_data[1][3],each_data[1][9].lower())
-         if not entry:
-             add_data(each_data,each_data[1][9].lower())
+            b=check_country_table(each_data[1][9].lower())
+            if not b:
+                create_country_table(each_data[1][9].lower())
+            entry=check_data(each_data[1][3],each_data[1][9].lower())
+            if not entry:
+                add_data(each_data,each_data[1][9].lower())
 mydb.commit() 
 mydb.close()
 
